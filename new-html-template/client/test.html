@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  
+  <script src="../assets/js/jquery.js"></script>
+  <script src="../assets/js/jquery.validate.js"></script>
+  
+  
+</head>
+<body>
+  <h1>Form Validation Example</h1>
+  <form class="cmxform" id="commentForm" method="get" action="">
+    <fieldset>
+      <legend>Please provide your name, email address (won't be published) and a comment</legend>
+      <p>
+        <label for="cname">Name (required, at least 2 characters)</label>
+        <input id="cname" name="name" minlength="2" type="text" required>
+      </p>
+      <p>
+        <label for="cemail">E-Mail (required)</label>
+        <input id="cemail" type="email" name="email" required>
+      </p>
+      <p>
+        <label for="curl">URL (optional)</label>
+        <input id="curl" type="url" name="url">
+      </p>
+      <p>
+        <label for="ccomment">Your comment (required)</label>
+        <textarea id="ccomment" name="comment" required></textarea>
+      </p>
+      <p>
+        <input class="submit" type="submit" value="Submit">
+      </p>
+    </fieldset>
+  </form>
+  <script>
+  $("#commentForm").validate();
+  </script>
+  
+  <!-- <script>
+	$.validator.setDefaults({
+		submitHandler: function() {
+			alert("submitted!");
+		}
+	});
+
+	$(document).ready(function() {
+		// validate the comment form when it is submitted
+		$("#commentForm").validate();
+
+		// validate signup form on keyup and submit
+		// $("#signupForm").validate();
+
+		
+	});
+	</script> -->
+</body>
+</html>
